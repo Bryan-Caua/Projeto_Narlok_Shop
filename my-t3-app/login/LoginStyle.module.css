@@ -1,0 +1,38 @@
+const LoginStyle = () => {
+    return (
+      <div className="bg-black w-screen min-h-screen flex flex-col justify-center items-center text-white">
+        <div className="bg-gray-900 w-379 h-520 flex flex-col justify-center items-center rounded-md">
+          <img className="mb-10" src={logo} alt="" />
+  
+          <h2 className="text-18">Login</h2>
+  
+          <form onSubmit={handleSubmit(loginUser)}>
+            <label>
+              Email
+              <input className="w-full mt-2 p-2 rounded-md" type="text" id="email" {...register("email")} placeholder="Digite seu e-mail" />
+              <p className="min-h-17">{errors.email?.message}</p>
+            </label>
+  
+            <label>
+              Senha
+              <input className="w-full mt-2 p-2 rounded-md" type="password" id="password" {...register("password")} placeholder="Digite sua senha" />
+              <p className="min-h-17">{errors.password?.message}</p>
+            </label>
+  
+            <button className="w-full mt-5 p-2 bg-gray-700 text-white border-none text-20 rounded-md cursor-pointer" type="submit">Entrar</button>
+          </form>
+  
+          <div>
+            <p className="text-12 text-gray-600 text-center">Ainda não possui uma conta?</p>
+            <Link href="/register">
+              <button className="max-w-285 h-48 bg-gray-700 text-white border-none text-20 rounded-md cursor-pointer mt-5 mb-5" id="botaoLink">Cadastre-se</button>
+            </Link>
+          </div>
+        </div>
+        <ToastContainer />
+      </div>
+    );
+  };
+  
+  export default LoginStyle;
+  
